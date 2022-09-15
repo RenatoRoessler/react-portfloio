@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { defaultLightTheme, defaultTheme } from "./styles/theme/default";
+import { GlobalStyle } from "./@types/global";
+import { Conteudo } from "./pages/conteudo";
+import { ThemeProvider as ThemeProviderM5 } from "@mui/material/styles";
+import { theme, themeLight } from "./styles/theme/theme";
+import { ToggleTheme } from "./pages/ToggleTheme/ToggleTheme";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkMode ? defaultTheme : defaultLightTheme}>
+      <ThemeProviderM5 theme={darkMode ? theme : themeLight}>
+        <GlobalStyle />
+        <ToggleTheme darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Conteudo />
+      </ThemeProviderM5>
+    </ThemeProvider>
   );
 }
 
