@@ -55,7 +55,9 @@ export const AboutMeImage = styled.div`
     /* transform: rotate(10deg); */
     transition: all 400ms ease;
     margin: 0 auto;
-    
+    border-radius: 40rem 40rem 0 0;
+    background: linear-gradient(#fff, transparent);
+    padding: 0 1rem 1rem 1rem;
 
     > img {
         display: block;

@@ -98,12 +98,17 @@ export const ContainerFadeInText = styled.header`
 `;
 
 export const StyledBox = styled.div`
-    width: 250px;
-    height: 250px;
+    width: 550px;
+    height: 350px;
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+        width: 300px;
+        height: 250px;
+    }
 `;
 
 export const StyledTitled = styled.div`
@@ -125,7 +130,7 @@ export const StyledTitled = styled.div`
     > h1 {
         font-family: 'Poppins';
         color: ${(props) => props.theme['color-font']};
-        font-size: 32px;
+        font-size: 75px;
         -webkit-animation: ${mainFadeIn} 2s forwards;
         -o-animation: ${mainFadeIn} 2s forwards;
         animation: ${mainFadeIn} 2s forwards;
@@ -134,6 +139,10 @@ export const StyledTitled = styled.div`
         display: flex;
         align-items: baseline;
         position: relative;
+
+        @media (max-width: ${({ theme }) => theme.mobile}) {
+            font-size: 36px;
+        }
 
         > span {
           width:0px;
@@ -162,7 +171,11 @@ export const StyledRole = styled.div`
     display: flex;
     align-items: center;
     height: 30px;
-    margin-top: -10px;
+    margin-top: 0px;
+
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+        margin-top: -10px;
+    }
 
     > div {
         width: 0%;

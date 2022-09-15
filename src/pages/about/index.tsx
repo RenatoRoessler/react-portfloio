@@ -1,6 +1,7 @@
 import { FaAward, FaReact } from "react-icons/fa";
 import { VscFolderLibrary } from "react-icons/vsc";
 import eu2 from "../../assets/geral/eu2.jpg";
+import me from "../../assets/geral/me.png";
 import {
   AboutCards,
   AboutCardsArticle,
@@ -17,7 +18,7 @@ export const About = () => {
       <AboutContainer>
         {/* <AboutMe> */}
         <AboutMeImage>
-          <img src={eu2} alt="About Image" />
+          <img src={me} alt="About Image" />
         </AboutMeImage>
         {/* </AboutMe> */}
         <ContainerConteudo>
